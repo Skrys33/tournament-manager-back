@@ -1,8 +1,9 @@
 package com.enzosagnelonge.service
 
 import com.enzosagnelonge.model.Player
+import com.enzosagnelonge.repository.PlayerRepository
 
-class PlayerServiceImpl(): PlayerService  {
+class PlayerServiceImpl(private val repository: PlayerRepository): PlayerService  {
     override suspend fun getLeaderboard(): List<Player> {
         TODO("Not yet implemented")
     }

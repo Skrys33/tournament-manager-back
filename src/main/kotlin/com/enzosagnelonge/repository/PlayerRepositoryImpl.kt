@@ -1,8 +1,9 @@
 package com.enzosagnelonge.repository
 
+import com.enzosagnelonge.configuration.Mongo
 import com.enzosagnelonge.model.Player
 
-class PlayerRepositoryImpl: PlayerRepository {
+class PlayerRepositoryImpl(private val mongo: Mongo): PlayerRepository {
     override suspend fun getLeaderboard(): List<Player> {
         TODO("Not yet implemented")
     }
