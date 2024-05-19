@@ -9,8 +9,8 @@ class PlayerServiceImpl(private val repository: PlayerRepository): PlayerService
         return repository.getLeaderboard()
     }
 
-    override suspend fun resetTournament() {
-        repository.resetTournament()
+    override suspend fun resetTournamentPlayers() {
+        repository.resetTournamentPlayers()
     }
 
     override suspend fun registerPlayer(name: String?) {
