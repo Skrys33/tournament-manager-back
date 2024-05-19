@@ -31,7 +31,7 @@ Follow these steps to set up and run the application:
    cd tournament-manager-back
    ```
 
-2. Execute stating application file:
+2. Execute starting application file:
 
    ```shell
    ./start-tournament-back.sh
