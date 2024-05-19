@@ -46,10 +46,8 @@ class PlayerRepositoryImpl(mongo: Mongo): PlayerRepository {
         deleteMany(BsonDocument()).deletedCount
     }
 
-    override suspend fun findPlayerByName(name: String): Player? = withCollection {
-        // TODO : CALCULATE RANK PLAYER
-        val filter = Filters.eq(Player::name.name, name)
-        find(filter).firstOrNull()
+    override suspend fun findPlayerByName(name: String): Player? {
+        return getLeaderboard().find { player ->  player.name == name }
     }
 
     override suspend fun updatePlayerScore(name: String, score: Int): Long = withCollection {

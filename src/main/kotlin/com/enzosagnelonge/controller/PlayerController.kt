@@ -24,7 +24,7 @@ fun Application.configurePlayerController() {
             try {
                 call.respond(HttpStatusCode.OK, player)
             } catch (e: RuntimeException) {
-                call.respond(HttpStatusCode.BadRequest, e.toString())
+                call.respond(HttpStatusCode.BadRequest, e.message.toString())
             }
         }
 
@@ -36,7 +36,7 @@ fun Application.configurePlayerController() {
                 service.registerPlayer(name)
                 call.respond(HttpStatusCode.Created, "Player has registered correctly.")
             } catch (e: RuntimeException) {
-                call.respond(HttpStatusCode.BadRequest, e.toString())
+                call.respond(HttpStatusCode.BadRequest, e.message.toString())
             }
         }
 
@@ -49,7 +49,7 @@ fun Application.configurePlayerController() {
                 service.updatePlayerScore(name, score)
                 call.respond(HttpStatusCode.OK, "Player's score has been updated correctly.")
             } catch (e: RuntimeException) {
-                call.respond(HttpStatusCode.BadRequest, e.toString())
+                call.respond(HttpStatusCode.BadRequest, e.message.toString())
             }
         }
 
