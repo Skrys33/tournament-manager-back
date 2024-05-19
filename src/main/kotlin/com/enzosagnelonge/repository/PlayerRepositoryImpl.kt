@@ -54,7 +54,7 @@ class PlayerRepositoryImpl(mongo: Mongo): PlayerRepository {
 
     override suspend fun updatePlayerScore(name: String, score: Int): Long = withCollection {
         val filter = Filters.eq(Player::name.name, name)
-        val update = Updates.inc(Player::score.name, score)
+        val update = Updates.set(Player::score.name, score)
 
         updateOne(filter, update).modifiedCount
     }
