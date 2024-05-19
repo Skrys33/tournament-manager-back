@@ -18,6 +18,7 @@ Before you proceed, ensure you have the following software installed on your sys
 - Java 11
 - Docker
 - Docker Compose
+- Git
 
 ## Installation
 
@@ -30,8 +31,8 @@ Follow these steps to set up and run the application:
    cd tournament-manager-back
    ```
 
-2. Execute stating app file:
+2. Execute stating application file:
 
    ```shell
-   ./start-tournament-app.bat
+   ./start-tournament-back.sh
    ```

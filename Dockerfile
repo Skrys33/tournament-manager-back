@@ -1,4 +1,4 @@
-FROM azul/zulu-openjdk:17
+FROM azul/zulu-openjdk:11
 EXPOSE 8080:8080
 RUN mkdir /app
 COPY ./build/libs/*-all.jar /app/ktor-docker-sample.jar
