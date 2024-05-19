@@ -57,7 +57,7 @@ fun Application.configurePlayerController() {
 
         delete("/players") {
             service.resetTournament()
-            call.respond(HttpStatusCode.OK, "Tournament reinitialized.")
+            call.respond(HttpStatusCode.OK, "Tournament player list reinitialized.")
         }
     }
 

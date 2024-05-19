@@ -20,7 +20,7 @@ class PlayerRepositoryImpl(private val mongo: Mongo): PlayerRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun updatePlayerScore(name: String, score: Int) {
+    override suspend fun updatePlayerScore(name: String, score: Int): Int {
         TODO("Not yet implemented")
     }
 }

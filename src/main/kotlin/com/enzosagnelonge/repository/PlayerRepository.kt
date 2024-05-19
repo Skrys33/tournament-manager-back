@@ -9,5 +9,5 @@ interface PlayerRepository {
     suspend fun registerPlayer(name: String)
     suspend fun resetTournament()
     suspend fun findPlayerByName(name: String): Player?
-    suspend fun updatePlayerScore(name: String, score: Int)
+    suspend fun updatePlayerScore(name: String, score: Int): Int
 }
