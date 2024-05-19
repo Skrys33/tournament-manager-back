@@ -33,6 +33,17 @@ services:
     depends_on:
       - mongo
 
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:8080:8080"
+    networks:
+      - MONGO
+    depends_on:
+      - mongo
+
 networks:
   MONGO:
     name: MONGO
