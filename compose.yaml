@@ -34,9 +34,7 @@ services:
       - mongo
 
   web:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    build: .
     ports:
       - "0.0.0.0:8080:8080"
     networks:
