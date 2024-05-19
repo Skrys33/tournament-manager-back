@@ -1,7 +1,9 @@
 package com.enzosagnelonge.di
 
 import com.enzosagnelonge.configuration.Mongo
+import com.enzosagnelonge.repository.PlayerRepository
 import com.enzosagnelonge.repository.PlayerRepositoryImpl
+import com.enzosagnelonge.service.PlayerService
 import com.enzosagnelonge.service.PlayerServiceImpl
 import com.typesafe.config.ConfigFactory
 import io.ktor.server.config.*
@@ -13,7 +15,7 @@ class Module {
 
     val apiModule = module {
         single { Mongo(mongoUri) }
-        single { PlayerRepositoryImpl(get()) }
-        single { PlayerServiceImpl(get()) }
+        single <PlayerRepository>{ PlayerRepositoryImpl(get()) }
+        single <PlayerService>{ PlayerServiceImpl(get()) }
     }
 }

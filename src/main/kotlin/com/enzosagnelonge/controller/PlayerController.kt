@@ -21,10 +21,10 @@ fun Application.configurePlayerController() {
             val name = call.parameters[Player::name.name]
             val player = service.findPlayerByName(name)
 
-            if (player != null) {
+            try {
                 call.respond(HttpStatusCode.OK, player)
-            } else {
-                call.respond(HttpStatusCode.NotFound, "Player not found.")
+            } catch (e: RuntimeException) {
+                call.respond(HttpStatusCode.BadRequest, e.toString())
             }
         }
 
