@@ -7,7 +7,7 @@ class PlayerServiceImpl(): PlayerService  {
         TODO("Not yet implemented")
     }
 
-    override suspend fun registerPlayer(player: Player) {
+    override suspend fun registerPlayer(name: String?) {
         TODO("Not yet implemented")
     }
 
@@ -15,11 +15,11 @@ class PlayerServiceImpl(): PlayerService  {
         TODO("Not yet implemented")
     }
 
-    override suspend fun findPlayerByName(name: String): Player {
+    override suspend fun findPlayerByName(name: String?): Player? {
         TODO("Not yet implemented")
     }
 
-    override suspend fun updatePlayerScore(name: String, score: Int) {
+    override suspend fun updatePlayerScore(name: String?, score: Int?) {
         TODO("Not yet implemented")
     }
 }
