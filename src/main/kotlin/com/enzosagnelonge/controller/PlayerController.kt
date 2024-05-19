@@ -46,13 +46,11 @@ fun Application.configurePlayerController() {
             val score = params[Player::score.name]?.toInt()
 
             try {
-                service.registerPlayer(name)
+                service.updatePlayerScore(name, score)
                 call.respond(HttpStatusCode.OK, "Player's score has been updated correctly.")
             } catch (e: RuntimeException) {
                 call.respond(HttpStatusCode.BadRequest, e.toString())
             }
-            service.updatePlayerScore(name, score)
-
         }
 
         delete("/players") {
